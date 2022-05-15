@@ -33,5 +33,19 @@ $(function(){
     window.scrollTo({top: 0, behavior: 'smooth'});
   });
 
+  let navbar = $('nav');
+
+	$(window).scroll(function(){
+		if($(window).scrollTop() <= 1){
+			navbar.removeClass('navbar-scroll');
+		} else {
+			navbar.addClass('navbar-scroll');
+		}
+	});                               
+
+  $('.main-section .left-section h1').animate({"-webkit-transform" : "translate(50px,100px)"});
+
+
 })
+
   
