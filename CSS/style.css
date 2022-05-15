@@ -22,8 +22,14 @@ a{
 body{
   font-family: 'DM Sans', 'Helvetica',  sans-serif;
   background-color: var(--Dark-gray-color-);
-  height: 5000px;
 }
+
+/* onload animations */
+
+
+
+
+/* ****************** */
 
 header{
   height: 100vh;
@@ -32,7 +38,20 @@ header{
   background-position: bottom;
 }
 
-  nav{
+.navbar-scroll{
+  background-color: #212428e2;
+  box-shadow: 0px 10px 9px rgba(0, 0, 0, 0.4);
+  transition: all .5s ease;
+  position: fixed;
+  top: 0;
+  z-index: 9;
+}
+
+nav{
+  transition: all .5s ease;
+}
+
+  .nav-bar{
     height: 85px;
     display: flex;
     align-items: center;
@@ -42,15 +61,14 @@ header{
     z-index: 3;
 }
 
-  nav a{
+  .nav-bar a{
     text-decoration: none;
     font-weight: 600;
     letter-spacing: .5px;
     z-index: 1;
 }
 
-
-  nav .search-bar{
+  .nav-bar .search-bar{
     margin-left: 30px;
     padding: 4px 11px;
     width: 250px;
@@ -64,19 +82,20 @@ header{
     transition: .5s ease;
 }
 
-nav .search-bar::placeholder{
+.nav-bar .search-bar::placeholder{
   color: white;
 }
 
-  nav .search-bar:focus{
+.nav-bar .search-bar:focus{
     outline: none;
 }
-nav .search-bar:hover{
+
+.nav-bar .search-bar:hover{
   box-shadow: #f2202b67 0px 0px 0px 4px;
   transition: .8s ease;
 }
 
-  nav .nav-bar{
+  .nav-bar ul{
     display: flex;
     align-items: center;
     list-style: none;
@@ -86,31 +105,31 @@ nav .search-bar:hover{
     z-index: 1;
 }
 
-  nav .nav-bar li{
+  .nav-bar ul li{
     margin-right: 17px;
     padding-bottom: 5px;
     overflow: hidden;
 }
 
-nav .nav-bar li a{
+.nav-bar ul li a{
   position: relative;
   padding-bottom: 5px;
   color: white;
 }
-nav .nav-bar li a:hover{
+.nav-bar ul li a:hover{
   color: white;
 }
 
-  nav .nav-bar i{
+  .nav-bar ul i{
     scale: .8;
     margin-left: 8px;
     font-weight: 900;
     color: var(--light-gray-color-);
 }
 
-/* NavBar hover animation */
+/* .nav-barBar hover animation */
 
-nav .nav-bar li a::before{
+.nav-bar ul li a::before{
   content:'';
   width: 100%;
   height: 2px;
@@ -121,30 +140,26 @@ nav .nav-bar li a::before{
   transition: all .8s ease;
 }
 
-nav .nav-bar li a:hover::before{
+.nav-bar ul li a:hover::before{
   left: 0;
 }
 
-  nav .btn-connectWallet{
+  .nav-bar .btn-connectWallet{
     background-color: var(--red-color);
     color: white;
-    padding: 3px 17px 4px;
+    width: 145px;
+    height: 28px;
+    text-align: center;
+    line-height: 28px;
+    font-size: 14px;
     border-radius: 30px;
     transition: .5s ease;
+    letter-spacing: normal;
 }
 
-  nav .btn-connectWallet:hover{
+  .nav-bar .btn-connectWallet:hover{
     box-shadow: .01px .01px 15px #ff343ead;
     transition: .5s ease;
-}
-
-.nav-bar span{
-    height: 2px;
-    width: 100%;
-    background-color: var(--purple-color);
-    position: absolute;
-    bottom: 0;
-    left: -100%;
 }
 
 /* Start Main-section */
@@ -152,7 +167,10 @@ nav .nav-bar li a:hover::before{
 .main-section{
   display: flex;
   padding: 0;
-  height: calc(100vh - 85px);
+  position: absolute;
+  top: 85px;
+  transform: translateX(-50%);
+  left: 50%;
 }
 
 .left-section{
@@ -168,13 +186,14 @@ nav .nav-bar li a:hover::before{
   font-size: 16px;
   font-weight: 500;
   line-height: 20px;
+  letter-spacing: normal;
 }
 
 .left-section h1{
   font-size: 50px;
   letter-spacing: -1px;
   font-weight: 600;
-  margin-top: 10px;
+  margin-top: 15px;
 }
 
 .artworks{
@@ -208,8 +227,8 @@ nav .nav-bar li a:hover::before{
   }
 
 
-.spacer-h150{
-  height: 150px;
+.spacer-h160{
+  height: 160px;
   display: block;
 }
 
@@ -222,6 +241,11 @@ nav .nav-bar li a:hover::before{
   display: flex;
   align-items: center;
   justify-content: center;
+  padding-top: 15px;
+}
+
+.owl-carousel:hover{
+  margin: 0;
 }
 
 .right-section .owl-carousel{
@@ -391,7 +415,7 @@ nav .nav-bar li a:hover::before{
 .top-sellers .avatar img{
   width: 100%;
   border-radius: 50%;
-  transition: .3s ease;
+  transition: .5s ease;
 }
 
 .top-sellers .avatar:hover img{
@@ -426,10 +450,8 @@ nav .nav-bar li a:hover::before{
   margin: 0;
 }
 
-
-
-
 /* END Top-Sellers */
+
 
 /* START Footer */
 
@@ -590,55 +612,3 @@ footer form a:hover{
 .go-top:hover{
   cursor: pointer;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* .footer-menu ul{
-    list-style: none;
-    margin: 0;
-    padding: 0;
-} */
