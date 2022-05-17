@@ -3,11 +3,21 @@
   $(document).ready(function(){
   $(".owl-carousel").owlCarousel();
 });
-  var owl = $('.owl-carousel');
+  var owl = $('.owl-carousel-1');
     owl.owlCarousel({
     items:1,
     loop:true,
     margin:10,
+    autoplay:true,
+    autoplayTimeout:2500,
+    autoplayHoverPause:true
+  });
+
+  var owl = $('.owl-carousel-2');
+    owl.owlCarousel({
+    items:5,
+    loop:true,
+    margin:30,
     autoplay:false,
     autoplayTimeout:2500,
     autoplayHoverPause:true
@@ -28,7 +38,6 @@
 
 
   $(".go-top").click(function(){
-    // $("body,html").animate({"scrollTop": 0}, 1500)
     window.scrollTo({top: 0, behavior: 'smooth'});
   });
 
