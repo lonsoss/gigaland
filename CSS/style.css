@@ -17,6 +17,7 @@ a{
 
     --red-shadow-: rgba(255,52,63,.5) 2px 2px 20px 0px ;
     --black-shadow-: rgba(0, 0, 0, 0.3) 0px 0px 8px 0px ;
+    --search-items-outline-: rgba(255,52,63,.3) 0px 0px 0px 4px ;
 }
 
 @font-face {
@@ -35,7 +36,6 @@ body{
   height: 100px;
   background-color: white;
 }
-
 
 /* ****************** */
 
@@ -99,7 +99,7 @@ nav{
 }
 
 .nav-bar .search-bar:hover{
-  box-shadow: var(--red-shadow-);
+  box-shadow: var(--search-items-outline-);
   transition: .8s ease;
 }
 
@@ -297,14 +297,10 @@ nav{
   padding-top: 15px;
 }
 
-.owl-carousel:hover{
-  margin: 0;
-}
-
-.right-section .owl-carousel{
+.right-section .owl-carousel-1{
   width: 590px;
   height: 590px;
-  border-radius: 7px;
+  border-radius: 10px;
   overflow: hidden;
   position: relative;
 }
@@ -358,7 +354,7 @@ nav{
   font-weight: 500;
 }
 
-.carousel-buttons{
+.right-section .carousel-buttons{
   height: 70px;
   position: absolute;
   z-index: 2;
@@ -370,12 +366,12 @@ nav{
   opacity: 0;
 }
 
-.carousel-buttons:hover{
+.right-section .carousel-buttons:hover{
   opacity: 100%;
   transition: .8s ease;
 }
  
-.previous,.next{
+.right-section .previous,.next{
   background-color: white;
   height: 70px;
   width: 70px;
@@ -385,24 +381,24 @@ nav{
   font-size: 16px;
 }
 
-.previous{
+.right-section .previous{
   border-radius: 50%;
   margin-left: -35px;
 }
 
-.previous i{
+.right-section .previous i{
   width: 50%;
   margin-left: auto;
   display: flex;
   justify-content: center;
 }
 
-.next{
+.right-section .next{
   border-radius: 50%;
   margin-right: -35px;
 }
 
-.next i{
+.right-section .next i{
   width: 50%;
   margin-right: auto;
   display: flex;
@@ -464,19 +460,19 @@ nav{
   height: 50px;
   border-radius: 50%;
   position: relative;
+  background-color: var(--red-color);
+  box-shadow:  rgba(0, 0, 0, 0.4) 3px 3px 5px 0px;
 }
 
 .header-card-section .profile img{
   width: 100%;
   border-radius: 50%;
-  transition: all .5s ease;
+  transition: all .2s ease;
 }
 
 .header-card-section .profile:hover img{
-  outline: solid 5px var(--red-color);
-  outline-offset: -5px;
-  transform: scale(.95);
-  transition: all .5s ease;
+  transform: scale(.85);
+  transition: all .2s ease;
 }
 
 .header-card-section .profile i{
@@ -616,10 +612,163 @@ nav{
 
 /* END New-items */
 
+/* START Hot-Collections */
+
+.hot-collections-container{
+  height: 340px;
+  padding: 0;
+  position: relative;
+  margin-bottom: 25px;
+}
+
+.hot-collections-container h2{
+  color: white;
+  margin-bottom: 20px;
+}
+
+.hot-collections{
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+}
+
+.hot-collections .owl-stage-outer{
+  padding: 5px 0;
+}
+
+.collection-Card{
+  width: 240px;
+  height: 240px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  box-shadow: var(--black-shadow-);
+  border-radius: 10px;
+}
+
+.collection-Card .banner{
+  width: 220px;
+  height: 125px;
+  position: absolute;
+  border-radius: 7px;
+  box-shadow: rgba(0, 0, 0, 0.4) 3px 3px 5px 0px;
+  top: 10px;
+  overflow: hidden;
+}
+
+.collection-Card .banner img{
+  width: 100%;
+  border-radius: 7px;
+  transition: all .8s ease;
+}
+
+.collection-Card:hover .banner img{
+  transform: scale(1.05);
+  transition: all .8s ease;
+}
+
+.collection-Card .collection-profile{
+  width: 60px;
+  height: 60px;
+  position: relative;
+  top: 105px;
+  border-radius: 50%;
+  transition: all .8s ease;
+}
+
+.collection-Card .collection-profile img{
+  width: 100%;
+  border-radius: 50%;
+}
+
+.collection-Card:hover .collection-profile{
+  transform: scale(1.05);
+  transition: all .8s ease;
+}
+
+.collection-Card .collection-profile i{
+  position: absolute;
+  bottom: 3px;
+  right: 3px;
+  color: var(--red-color);
+  background-color: white;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+}
+
+.collection-Card h4{
+  position: absolute;
+  bottom: 47px;
+  margin: 0;
+  font-size: 16px;
+  line-height: 19px;
+}
+
+.collection-Card p{
+  position: absolute;
+  bottom: 24px;
+  margin: 0;
+  font-size: 14px;
+  height: 26px;
+  line-height: 26px;
+  color: var(--light-gray-color-);
+}
+
+.hot-collections-container .previous{
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background-color: var(--Dark-gray-color-);
+  box-shadow: var(--black-shadow-);
+  position: absolute;
+  transform: translate(-50%,-50%);
+  left: 0;
+  top: 50%;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.hot-collections-container .next{
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background-color: var(--Dark-gray-color-);
+  box-shadow: var(--black-shadow-);
+  position: absolute;
+  transform: translate(50%,-50%);
+  right: 0;
+  top: 50%;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hot-collections-container i{
+  color: white;
+}
+
+.owl-dots{
+  display: none;
+}
+
+.owl-item{
+  margin: 0;
+}
+
+/* END Hot-Collections */
+
 /* START Top-Sellers */
 
 .top-sellers{
   color: white;
+  margin-bottom: 40px;
 }
 
 .top-sellers h3{
@@ -707,6 +856,98 @@ nav{
 }
 
 /* END Top-Sellers */
+
+
+/* CREAT AND SELL NOW START */
+
+.creat-and-sell-container{
+  padding-bottom: 90px;
+}
+
+.creat-and-sell-container h2{
+  color: white;
+  font-size: 30px;
+  line-height: 46px;
+  letter-spacing: -1px;
+  margin-bottom: 20px;
+}
+
+.creat-and-sell{
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.creat-and-sell .features-box{
+  width: 415px;
+  height: 310px;
+  background-color: var(--trsp24-white-color-);
+  border-radius: 6px;
+  box-shadow: var(--black-shadow-);
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.creat-and-sell .features-box:hover .animated-back-icon img{
+  transform: rotate(-20deg);
+  transition: all 1.5s ease;
+}
+
+.creat-and-sell .feature-icon{
+  width: 55px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--red-color);
+  border-radius: 5px;
+  position: absolute;
+  top: 50px;
+  left: 50px;
+}
+
+.creat-and-sell .feature-icon img{
+  width: 55%;
+}
+
+.features-box h3{
+  font-size: 20px;
+  line-height: 24px;
+  margin: 0;
+  position: absolute;
+  top: 130px;
+  left: 50px;
+  z-index: 2;
+}
+
+.features-box p{
+  font-size: 16px;
+  line-height: 26px;
+  width: 315px;
+  color: var(--light-gray-color-);
+  margin: 0;
+  position: absolute;
+  bottom: 65px;
+  left: 50px;
+}
+
+.features-box .animated-back-icon{
+  width: 415px;
+  height: 310px;
+  z-index: 1;
+}
+
+.features-box .animated-back-icon img{
+  width: 60%;
+  position: absolute;
+  right: -25px;
+  bottom: -35px;
+  opacity: .1;
+  transition: all .7s ease;
+}
+
+/* CREAT AND SELL NOW END */
 
 
 /* START Footer */
@@ -804,7 +1045,6 @@ footer form a:hover{
   color: white;
 }
 
-
 /* Footer Bottom-Section */
 
 .line-up{
@@ -872,4 +1112,30 @@ footer form a:hover{
   color: var(--Dark-gray-color-);
   transition: transform .5s ease;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
