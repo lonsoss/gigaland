@@ -1,7 +1,6 @@
 
-
-$(function(){
-    $(document).ready(function(){
+  
+  $(document).ready(function(){
   $(".owl-carousel").owlCarousel();
 });
   var owl = $('.owl-carousel');
@@ -41,11 +40,10 @@ $(function(){
 		} else {
 			navbar.addClass('navbar-scroll');
 		}
-	});                               
-
-  $('.main-section .left-section h1').animate({"-webkit-transform" : "translate(50px,100px)"});
+	});    
 
 
-})
-
+  $(function(){
+    loopcounter('countdown1');
+  });
   
