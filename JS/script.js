@@ -1,9 +1,8 @@
 
   
   $(document).ready(function(){
-	  
   $(".owl-carousel").owlCarousel();
-
+});
   var owl = $('.owl-carousel-1');
     owl.owlCarousel({
     items:1,
@@ -50,10 +49,11 @@
 		}
 	});    
 
+
+  $(function(){
     loopcounter('countdown1');
     loopcounter('countdown2');
     loopcounter('countdown3');
     loopcounter('countdown4');
-	  
-});
+  });
   
