@@ -8,7 +8,7 @@
     items:1,
     loop:true,
     margin:10,
-    autoplay:true,
+    autoplay:false,
     autoplayTimeout:2500,
     autoplayHoverPause:true
   });
