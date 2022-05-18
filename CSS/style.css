@@ -222,6 +222,9 @@ nav{
     opacity: 0;
     transform: translateY(60px);
   }
+  50%{
+    opacity: .5;
+  }
   100%{
     opacity: 1;
     transform: translateY(0);
@@ -289,12 +292,22 @@ nav{
 
 /* Start Right-section */
 
+@keyframes slideUp-Slider {
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
 .right-section{
   width: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   padding-top: 15px;
+  animation: slideUp-Slider 1s;
 }
 
 .right-section .owl-carousel-1{
@@ -305,41 +318,32 @@ nav{
   position: relative;
 }
 
-.item-1{
+.scalEffect{
   width: 590px;
   height: 590px;
-  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.199),rgba(0, 0, 0, 0.199)), url(../img/crs-1.jpg);
-  background-size: cover;
+  position: relative;
+  overflow: hidden;
 } 
 
-.item-2{
-  width: 590px;
-  height: 590px;
-  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.199),rgba(0, 0, 0, 0.199)), url(../img/crs-4.jpg);
-  background-size: cover;
+.scalEffect img{
+  width: 100%;
+  transition: all .8s ease-out;
 }
-.item-3{
-  width: 590px;
-  height: 590px;  
-  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.199),rgba(0, 0, 0, 0.199)), url(../img/crs-5.jpg);
-  background-size: cover;
+
+.right-section:hover img{
+  transform: scale(1.2);
+  transition: all 2s ease;
 }
-.item-4{
-  width: 590px;
-  height: 590px;
-  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.199),rgba(0, 0, 0, 0.199)), url(../img/anim-5.webp);
-  background-size: cover;
-}
-.item-5{
-  width: 590px;
-  height: 590px;  
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.199),rgba(0, 0, 0, 0.199)), url(../img/anim-8.webp) ;
-  background-size: cover;
-}
+
 
 .titles{
   height: 100%;
+  width: 100%;
   padding: 40px;
+  z-index: 2;
+  position: absolute;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.2);
 }
 
 .titles h3{
@@ -355,9 +359,9 @@ nav{
 }
 
 .right-section .carousel-buttons{
-  height: 70px;
+  height: 100%;
   position: absolute;
-  z-index: 2;
+  z-index: 3;
   width: 590px;
   display: flex;
   justify-content: space-between;
@@ -1112,29 +1116,6 @@ footer form a:hover{
   color: var(--Dark-gray-color-);
   transition: transform .5s ease;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
