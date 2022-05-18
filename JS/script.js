@@ -9,7 +9,7 @@
     loop:true,
     margin:10,
     autoplay:true,
-    autoplayTimeout:2500,
+    autoplayTimeout:5000,
     autoplayHoverPause:true
   });
 
